@@ -35,6 +35,25 @@ public class MovableRectangle implements Movable{
 		bottomRight.moveUp();
 		
 	}
+             
+        @Override
+	public void render(){
+	    int horizontaLine = bottomRight.x - topLeft.x;
+	    int verticaLine = topLeft.y - bottomRight.y - 2;
+	    int ctrX = horizontaLine;
+	    while (ctrX-- != 1){ System.out.print("x "); }
+            System.out.println("x");
+            while (verticaLine-- != 0){
+	        System.out.print("x");
+		ctrX = (2 * horizontaLine) - 3;
+		while (ctrX-- != 0) { 
+		    System.out.print(" "); 
+		}
+		System.out.println("x");    
+	    }
+	    while (horizontaLine-- != 1){ System.out.print("x "); }
+            System.out.println("x");
+	}
 	
 	public String toString(){
 		return String.format("Movable Rectangle with p1(%d, %d), p2(%d, %d), p3(%d, %d), p4(%d, %d)"
